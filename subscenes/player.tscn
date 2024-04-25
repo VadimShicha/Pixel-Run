@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b43k1cmdoks77"]
+
+[ext_resource type="Script" path="res://subscenes/player.gd" id="1_pskmw"]
+[ext_resource type="Texture2D" uid="uid://b1wy17kugtkec" path="res://textures/frog.png" id="1_u3naf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78s42"]
+radius = 31.0
+height = 76.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pskmw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_u3naf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_78s42")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -45)
+position_smoothing_enabled = true
+position_smoothing_speed = 18.0
