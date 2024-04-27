@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var sprite_2d = $Sprite2D
+
 const SPEED = 400
 const JUMP_VELOCITY = -770
 
@@ -10,19 +12,22 @@ var gravity_direction = 1
 
 func _input(event):
 	if event.is_action_pressed("left_mouse_click"):
-		gravity_direction *= -1
+		if gravity_direction == 1:
+			gravity_direction = -1
+			sprite_2d.flip_v = true
+		else:
+			gravity_direction = 1
+			sprite_2d.flip_v = false
 		
 
 func _physics_process(delta):
-	print(velocity)
-	
 	# Add the gravity
 	if not is_on_floor():
 		if gravity_direction == 1:
-			velocity.y += gravity * 1.72 * delta
+			velocity.y += gravity * 2 * delta
 	if not is_on_ceiling():
 		if gravity_direction == -1:
-			velocity.y -= gravity * 1.72 * delta
+			velocity.y -= gravity * 2 * delta
 		
 	# Handle jump
 	if Input.is_action_just_pressed("jump"):

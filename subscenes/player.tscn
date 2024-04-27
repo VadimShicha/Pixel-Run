@@ -19,6 +19,8 @@ texture = ExtResource("1_u3naf")
 shape = SubResource("CapsuleShape2D_78s42")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -45)
 position_smoothing_enabled = true
 position_smoothing_speed = 18.0
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
