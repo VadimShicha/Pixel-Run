@@ -8,8 +8,6 @@ radius = 31.0
 height = 76.0
 
 [node name="Player" type="RigidBody2D"]
-gravity_scale = 1.7
-lock_rotation = true
 script = ExtResource("1_pskmw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
