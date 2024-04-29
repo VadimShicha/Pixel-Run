@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://df7q6ijoo8o51"]
 
 [ext_resource type="Texture2D" uid="uid://mvq8wxcd2pmb" path="res://textures/background/gray_checker.png" id="1_2pjyr"]
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_168ol"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_168ol"]
 
 [sub_resource type="SystemFont" id="SystemFont_jlv4k"]
 font_names = PackedStringArray("Comic Sans MS")

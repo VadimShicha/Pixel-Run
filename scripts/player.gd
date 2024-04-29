@@ -1,8 +1,9 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @onready var frog_arrow = $FrogArrow
 @onready var sprite_2d = $Sprite2D
 
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const FROG_ARROW_CENTER_OFFSET = 70
 const SPEED = 400
@@ -21,10 +22,13 @@ func _process(delta):
 		
 	frog_arrow.position = mouse_direction * FROG_ARROW_CENTER_OFFSET
 	
-	
 func _physics_process(delta):
-	var is_grounded = snapped(linear_velocity.y, 0.05) == 0
+
+	var is_grounded = is_on_floor()
 	
+	if !is_grounded:
+		velocity.y += gravity * delta
+		
 	if is_grounded:
 		sprite_2d.animation = "default"
 		frog_arrow.show()
@@ -37,18 +41,22 @@ func _physics_process(delta):
 		var mouse_position = get_global_mouse_position()
 		var direction = (mouse_position - position).normalized()
 		sprite_2d.flip_h = (direction.x > 0)
-		apply_impulse(direction * 1100)
+		velocity = direction * 1100
 
 	# handle jumping
 	if is_grounded and Input.is_action_just_pressed("jump"):
-		linear_velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY
 
 	# handle movement and stop the player once key is released
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		sprite_2d.flip_h = (direction == 1)
-		linear_velocity.x = direction * SPEED
+		velocity.x = direction * SPEED
 		move_keys_just_pressed = true
-	elif move_keys_just_pressed and linear_velocity.x != 0:
-		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
+	elif move_keys_just_pressed and velocity.x != 0:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_keys_just_pressed = false
+	elif is_on_floor():
+		velocity.x = velocity.x * 0.8
+		
+	move_and_slide()

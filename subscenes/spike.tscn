@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd6ja15kqc3rx"]
 
-[ext_resource type="Script" path="res://subscenes/spike.gd" id="1_cd55x"]
+[ext_resource type="Script" path="res://scripts/spike.gd" id="1_61ium"]
 [ext_resource type="Texture2D" uid="uid://bgo4ott10hel0" path="res://textures/spike.png" id="1_x6by5"]
 
 [node name="Spike" type="Area2D"]
-script = ExtResource("1_cd55x")
+script = ExtResource("1_61ium")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
