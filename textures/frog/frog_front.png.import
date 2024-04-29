@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktpyuq81pc6p"
-path="res://.godot/imported/frog_fall.png-5ce0af53c8bd3bce2c0a4bbc6a12bb27.ctex"
+uid="uid://b1wy17kugtkec"
+path="res://.godot/imported/frog_front.png-338e1d725bf9de390bfcb3ea0421a947.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/frog_fall.png"
-dest_files=["res://.godot/imported/frog_fall.png-5ce0af53c8bd3bce2c0a4bbc6a12bb27.ctex"]
+source_file="res://textures/frog/frog_front.png"
+dest_files=["res://.godot/imported/frog_front.png-338e1d725bf9de390bfcb3ea0421a947.ctex"]
 
 [params]
 

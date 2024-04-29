@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boof6h1muf0gt"
-path="res://.godot/imported/frog.png-c89aa22e2fc1d582dd37ab16e760c50a.ctex"
+uid="uid://mvq8wxcd2pmb"
+path="res://.godot/imported/gray_checker.png-913c3af60bf049c374973041e3e5ed39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/frog.png"
-dest_files=["res://.godot/imported/frog.png-c89aa22e2fc1d582dd37ab16e760c50a.ctex"]
+source_file="res://textures/background/gray_checker.png"
+dest_files=["res://.godot/imported/gray_checker.png-913c3af60bf049c374973041e3e5ed39.ctex"]
 
 [params]
 

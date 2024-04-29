@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mvq8wxcd2pmb"
-path="res://.godot/imported/gray_checker.png-d75c02080f0699b4eb1d02b5579092f1.ctex"
+uid="uid://c7a6252sg1sja"
+path="res://.godot/imported/brown_triangle.png-499f0d52cdf8f72b850c50dc7755fe87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/gray_checker.png"
-dest_files=["res://.godot/imported/gray_checker.png-d75c02080f0699b4eb1d02b5579092f1.ctex"]
+source_file="res://textures/background/brown_triangle.png"
+dest_files=["res://.godot/imported/brown_triangle.png-499f0d52cdf8f72b850c50dc7755fe87.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4dm4o88bty6d"
-path="res://.godot/imported/pink_arrow.png-221ad7cbae3930ac52932f072c2fc68a.ctex"
+path="res://.godot/imported/pink_arrow.png-3ca558e64a18ed04366854f5e4142a0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/pink_arrow.png"
-dest_files=["res://.godot/imported/pink_arrow.png-221ad7cbae3930ac52932f072c2fc68a.ctex"]
+source_file="res://textures/background/pink_arrow.png"
+dest_files=["res://.godot/imported/pink_arrow.png-3ca558e64a18ed04366854f5e4142a0a.ctex"]
 
 [params]
 

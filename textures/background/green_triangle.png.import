@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://camualroalvab"
-path="res://.godot/imported/frog_blink.png-2815bf12ecaaa62ceeabebe4ef772229.ctex"
+uid="uid://wa8ir8pwo87"
+path="res://.godot/imported/green_triangle.png-4dd6a94637a997b4c07dbf8671ef956d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/frog_blink.png"
-dest_files=["res://.godot/imported/frog_blink.png-2815bf12ecaaa62ceeabebe4ef772229.ctex"]
+source_file="res://textures/background/green_triangle.png"
+dest_files=["res://.godot/imported/green_triangle.png-4dd6a94637a997b4c07dbf8671ef956d.ctex"]
 
 [params]
 
