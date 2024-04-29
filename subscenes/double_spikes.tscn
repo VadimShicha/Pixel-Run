@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gn8xxb74sm2y"]
+
+[ext_resource type="PackedScene" uid="uid://dd6ja15kqc3rx" path="res://subscenes/spike.tscn" id="1_2cm2o"]
+
+[node name="DoubleSpikes" type="Node2D"]
+
+[node name="Spike1" parent="." instance=ExtResource("1_2cm2o")]
+position = Vector2(-16, 0)
+
+[node name="Spike2" parent="." instance=ExtResource("1_2cm2o")]
+position = Vector2(16, 0)

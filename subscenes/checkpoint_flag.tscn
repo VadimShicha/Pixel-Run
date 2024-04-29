@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://erbrmga07gv2"]
+
+[ext_resource type="Texture2D" uid="uid://cn3rsbkdq6r7b" path="res://textures/checkpoint_flag.png" id="1_1y4xu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h4v0b"]
+normal = Vector2(-1, 0)
+
+[node name="CheckpointFlag" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_1y4xu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_h4v0b")
