@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://erbrmga07gv2"]
+[gd_scene load_steps=4 format=3 uid="uid://erbrmga07gv2"]
 
 [ext_resource type="Texture2D" uid="uid://cn3rsbkdq6r7b" path="res://textures/checkpoint_flag.png" id="1_1y4xu"]
+[ext_resource type="Script" path="res://scripts/checkpoint_flag.gd" id="1_820jw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h4v0b"]
 normal = Vector2(-1, 0)
 
 [node name="CheckpointFlag" type="Area2D"]
+script = ExtResource("1_820jw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -14,3 +16,5 @@ texture = ExtResource("1_1y4xu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("WorldBoundaryShape2D_h4v0b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
