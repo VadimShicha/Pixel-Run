@@ -1,18 +1,21 @@
 extends Node
 
 @onready var game_over_panel = %GameOverPanel
+@onready var tutorial_panel = %TutorialPanel
+
 @onready var player = %Player
 
 var is_alive = true
+var tutorial_open = true
 
 var checkpoint_index = 0
 var checkpoint_position = Vector2(-175, 275)
 
-const CHECKPOINT_POSITIONS = [Vector2(-175, 275), Vector2(1951, 275)]
-
+const CHECKPOINT_POSITIONS = [Vector2(-175, 275), Vector2(1951, 275), Vector2(4500, 195)]
+	
 func _ready():
-	set_checkpoint(1)
-	player_die()
+	get_tree().paused = true
+	tutorial_panel.show()
 	
 func player_die():
 	is_alive = false
@@ -32,5 +35,9 @@ func set_checkpoint(index):
 	checkpoint_position = CHECKPOINT_POSITIONS[index]
 
 func _process(delta):
-	if !is_alive and Input.is_action_just_pressed("jump"):
+	if tutorial_open and Input.is_action_just_pressed("jump"):
+		tutorial_open = false
+		tutorial_panel.hide()
+		get_tree().paused = false
+	elif !is_alive and Input.is_action_just_pressed("jump"):
 		player_respawn()
