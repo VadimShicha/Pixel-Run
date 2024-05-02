@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cn3rsbkdq6r7b" path="res://textures/checkpoint_flag.png" id="1_1y4xu"]
 [ext_resource type="Script" path="res://scripts/checkpoint_flag.gd" id="1_820jw"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h4v0b"]
-normal = Vector2(-1, 0)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_taaaw"]
+a = Vector2(0, -1000)
+b = Vector2(0, 1000)
 
 [node name="CheckpointFlag" type="Area2D"]
 script = ExtResource("1_820jw")
@@ -15,6 +16,17 @@ scale = Vector2(5, 5)
 texture = ExtResource("1_1y4xu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_h4v0b")
+shape = SubResource("SegmentShape2D_taaaw")
+
+[node name="EnterParticleEmitter" type="CPUParticles2D" parent="."]
+position = Vector2(0, -39)
+emitting = false
+amount = 32
+spread = 180.0
+initial_velocity_min = 80.0
+initial_velocity_max = 130.0
+scale_amount_min = 3.0
+scale_amount_max = 9.0
+color = Color(1, 0.03, 0.4665, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

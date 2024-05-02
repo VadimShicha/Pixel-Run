@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://df7q6ijoo8o51"]
+[gd_scene load_steps=6 format=3 uid="uid://df7q6ijoo8o51"]
 
 [ext_resource type="Texture2D" uid="uid://mvq8wxcd2pmb" path="res://textures/background/gray_checker.png" id="1_2pjyr"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_168ol"]
 [ext_resource type="FontFile" uid="uid://bosahcamy6v8n" path="res://textures/fonts/PixelOperator8.ttf" id="3_asq12"]
 [ext_resource type="FontFile" uid="uid://j7af2awo0kbw" path="res://textures/fonts/PixelOperator8-Bold.ttf" id="3_ne3iw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dg41w"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_168ol")
@@ -32,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_asq12")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg41w")
 text = "Play"
 
 [node name="SettingsButton" type="Button" parent="."]
@@ -76,7 +79,7 @@ offset_right = 40.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_asq12")
 theme_override_font_sizes/font_size = 20
-text = "v0.1"
+text = "v0.2"
 vertical_alignment = 2
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

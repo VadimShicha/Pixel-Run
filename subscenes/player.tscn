@@ -65,11 +65,11 @@ position = Vector2(0, 3)
 polygon = PackedVector2Array(29, 28, 35, -24, 17.7377, -33, -16, -33, -33.99, -22.563, -29, 28)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -41)
 position_smoothing_enabled = true
-position_smoothing_speed = 18.0
-drag_vertical_enabled = true
-drag_top_margin = 1.0
-drag_bottom_margin = 1.0
+position_smoothing_speed = 20.0
+drag_top_margin = 0.4
+drag_bottom_margin = 0.4
 
 [node name="FrogArrow" type="Sprite2D" parent="."]
 modulate = Color(0.36771, 0.721688, 0.250589, 0.670588)
