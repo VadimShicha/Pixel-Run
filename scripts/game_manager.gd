@@ -4,11 +4,12 @@ extends Node
 @onready var tutorial_panel = %TutorialPanel
 @onready var pause_panel = %PausePanel
 @onready var pause_panel_return_home_button = %ReturnHomeButton
+@onready var coin_amount_label = %CoinAmountLabel
 
 @onready var player = %Player
 
 var is_alive = true
-#var tutorial_open = false
+var coin_amount = 0
 
 enum UITypeOpen {NONE, TUTORIAL, GAMEOVER, PAUSEMENU}
 
@@ -28,6 +29,10 @@ const CHECKPOINT_POSITIONS = [
 func _ready():
 	player_die()
 	set_checkpoint(4)
+	
+func set_coin_amount(amount):
+	coin_amount = amount
+	coin_amount_label.text = str(coin_amount)
 	
 func show_tutorial():
 	ui_open = UITypeOpen.TUTORIAL

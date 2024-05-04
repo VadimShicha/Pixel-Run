@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1768m8o57vj"]
+[gd_scene load_steps=22 format=3 uid="uid://d1768m8o57vj"]
 
 [ext_resource type="Texture2D" uid="uid://d4dm4o88bty6d" path="res://textures/background/pink_arrow.png" id="1_jj5c3"]
 [ext_resource type="Texture2D" uid="uid://c15ie28enetcj" path="res://textures/background/magenta_arrow.png" id="2_dc10n"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dd6ja15kqc3rx" path="res://subscenes/spike.tscn" id="9_lki4g"]
 [ext_resource type="Texture2D" uid="uid://dknt7v8aie6jd" path="res://textures/pause.png" id="9_oupnr"]
 [ext_resource type="PackedScene" uid="uid://mke1ju8iatjo" path="res://subscenes/moving_platform(700).tscn" id="10_irkte"]
+[ext_resource type="Texture2D" uid="uid://csuherp0uwcj1" path="res://textures/coin.png" id="11_qxjd0"]
 [ext_resource type="PackedScene" uid="uid://b6m5lquggje2f" path="res://subscenes/moving_platform(300).tscn" id="12_de0tw"]
+[ext_resource type="PackedScene" uid="uid://bqn2r75m2w7kl" path="res://subscenes/coin.tscn" id="13_dvmvf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awqea"]
 load_path = "res://.godot/imported/terrain.png-c02b115b005d5ad54d48cdbec8686646.ctex"
@@ -856,6 +858,45 @@ theme_override_fonts/font = ExtResource("5_77jn2")
 theme_override_font_sizes/font_size = 30
 text = "Back to Main Menu"
 
+[node name="CoinPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -137.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 47.0
+grow_horizontal = 0
+
+[node name="CoinTexture" type="TextureRect" parent="UI/CoinPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -23.5
+offset_right = 40.0
+offset_bottom = 23.5
+grow_vertical = 2
+texture = ExtResource("11_qxjd0")
+
+[node name="CoinAmountLabel" type="Label" parent="UI/CoinPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_77jn2")
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="PauseButton" type="Button" parent="UI"]
 offset_left = 4.0
 offset_top = 4.0
@@ -887,6 +928,9 @@ expand_mode = 2
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("8_o01ct")
+
+[node name="Coin" parent="." instance=ExtResource("13_dvmvf")]
+position = Vector2(7270, -2249)
 
 [connection signal="pressed" from="UI/PausePanel/ReturnHomeButton" to="Player" method="_on_return_home_button_pressed"]
 [connection signal="pressed" from="UI/PausePanel/ReturnHomeButton" to="GameManager" method="_on_return_home_button_pressed"]
