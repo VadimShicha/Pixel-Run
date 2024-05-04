@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://va4ciuc83jb8"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_4r5mt"]
+[ext_resource type="Texture2D" uid="uid://c15ie28enetcj" path="res://textures/background/magenta_arrow.png" id="1_ramdw"]
+[ext_resource type="FontFile" uid="uid://bosahcamy6v8n" path="res://textures/fonts/PixelOperator8.ttf" id="2_ixug1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3uat3"]
+
+[node name="Shop" type="Node"]
+script = ExtResource("1_4r5mt")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ramdw")
+stretch_mode = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 115.0
+offset_bottom = 42.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_ixug1")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3uat3")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

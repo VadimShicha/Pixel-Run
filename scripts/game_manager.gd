@@ -17,11 +17,17 @@ var ui_open = UITypeOpen.NONE
 var checkpoint_index = 0
 var checkpoint_position = Vector2(-175, 275)
 
-const CHECKPOINT_POSITIONS = [Vector2(-150, 275), Vector2(1951, 275), Vector2(4600, 195), Vector2(7750, -616)]
+const CHECKPOINT_POSITIONS = [
+	Vector2(-150, 275),
+	Vector2(1951, 275),
+	Vector2(4600, 195),
+	Vector2(7750, -616),
+	Vector2(7200, -2250)
+	]
 
-#func _ready():
-	#player_die()
-	#set_checkpoint(0)
+func _ready():
+	player_die()
+	set_checkpoint(4)
 	
 func show_tutorial():
 	ui_open = UITypeOpen.TUTORIAL
