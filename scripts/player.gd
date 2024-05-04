@@ -36,13 +36,6 @@ func _physics_process(delta):
 		sprite_2d.animation = "fall"
 		frog_arrow.hide()
 		
-	# handle hopping
-	if is_grounded and Input.is_action_just_pressed("left_mouse_click"):
-		var mouse_position = get_global_mouse_position()
-		var direction = (mouse_position - position).normalized()
-		sprite_2d.flip_h = (direction.x > 0)
-		velocity = direction * 1100
-
 	# handle jumping
 	if is_grounded and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
@@ -60,3 +53,12 @@ func _physics_process(delta):
 		velocity.x = velocity.x * 0.8
 		
 	move_and_slide()
+
+# unhandled input ensures that mouse clicks aren't ones that click
+func _unhandled_input(event):
+	# handle hopping
+	if is_on_floor() and Input.is_action_just_pressed("left_mouse_click"):
+		var mouse_position = get_global_mouse_position()
+		var direction = (mouse_position - position).normalized()
+		sprite_2d.flip_h = (direction.x > 0)
+		velocity = direction * 1100
