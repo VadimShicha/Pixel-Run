@@ -657,48 +657,32 @@ unique_name_in_owner = true
 
 [node name="Coin1" parent="GameCoins/Checkpoint4" instance=ExtResource("13_dvmvf")]
 position = Vector2(8148, -1521)
-coin_checkpoint_index = 3
 
 [node name="Coin2" parent="GameCoins/Checkpoint4" instance=ExtResource("13_dvmvf")]
 position = Vector2(8239, -1810)
-coin_checkpoint_index = 3
-coin_index = 1
 
 [node name="Coin3" parent="GameCoins/Checkpoint4" instance=ExtResource("13_dvmvf")]
 position = Vector2(9018, -2251)
-coin_checkpoint_index = 3
-coin_index = 2
 
 [node name="Coin4" parent="GameCoins/Checkpoint4" instance=ExtResource("13_dvmvf")]
 position = Vector2(8752, -1814)
-coin_checkpoint_index = 3
-coin_index = 3
 
 [node name="Checkpoint5" type="Node" parent="GameCoins"]
 
 [node name="Coin1" parent="GameCoins/Checkpoint5" instance=ExtResource("13_dvmvf")]
 position = Vector2(6589, -3720)
-coin_checkpoint_index = 4
 
 [node name="Coin2" parent="GameCoins/Checkpoint5" instance=ExtResource("13_dvmvf")]
 position = Vector2(6638, -3804)
-coin_checkpoint_index = 4
-coin_index = 1
 
 [node name="Coin3" parent="GameCoins/Checkpoint5" instance=ExtResource("13_dvmvf")]
 position = Vector2(6716, -3844)
-coin_checkpoint_index = 4
-coin_index = 2
 
 [node name="Coin4" parent="GameCoins/Checkpoint5" instance=ExtResource("13_dvmvf")]
 position = Vector2(6802, -3801)
-coin_checkpoint_index = 4
-coin_index = 3
 
 [node name="Coin5" parent="GameCoins/Checkpoint5" instance=ExtResource("13_dvmvf")]
 position = Vector2(6841, -3709)
-coin_checkpoint_index = 4
-coin_index = 4
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -987,12 +971,10 @@ grow_vertical = 2
 texture = ExtResource("9_oupnr")
 expand_mode = 2
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("checkpoint4_coins", "checkpoint5_coins")]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("8_o01ct")
-checkpoint4_coins = [NodePath("../GameCoins/Checkpoint4/Coin1"), NodePath("../GameCoins/Checkpoint4/Coin2"), NodePath("../GameCoins/Checkpoint4/Coin3"), NodePath("../GameCoins/Checkpoint4/Coin4")]
-checkpoint5_coins = [NodePath("../GameCoins/Checkpoint5/Coin1"), NodePath("../GameCoins/Checkpoint5/Coin2"), NodePath("../GameCoins/Checkpoint5/Coin3"), NodePath("../GameCoins/Checkpoint5/Coin4"), NodePath("../GameCoins/Checkpoint5/Coin5")]
 
 [connection signal="pressed" from="UI/PausePanel/ReturnHomeButton" to="Player" method="_on_return_home_button_pressed"]
 [connection signal="pressed" from="UI/PausePanel/ReturnHomeButton" to="GameManager" method="_on_return_home_button_pressed"]

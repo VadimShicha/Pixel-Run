@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgcvsnxxo816j"]
+
+[ext_resource type="Texture2D" uid="uid://bme4kib1krivw" path="res://textures/right_arrow_sign.png" id="1_kcu3p"]
+
+[node name="RightArrowSign" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_kcu3p")
